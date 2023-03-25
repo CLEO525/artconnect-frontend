@@ -32,7 +32,6 @@ const JoinHeader = styled.div`
 `;
 
 const StyledForm = styled.form`
-  margin-top: 3rem;
   font-size: 26px;
   width: auto;
   height: auto;
