@@ -36,11 +36,12 @@ const StyledButton = styled.button`
   background-color: #d9d9d9;
   border: none;
   border-bottom: 2px solid #000000;
-
+  cursor: pointer;
   :hover {
-    color: #939393;
+    font-weight: 700;
+    color: #ff4429;
     border: none;
-    border-bottom: 2px solid #939393;
+    border-bottom: 3px solid #ff4429;
   }
 `;
 
