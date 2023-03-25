@@ -1,34 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import PageTitle from "../components/common/layout/PageTitle";
 
-const Wrap = styled.div`
-  width: auto;
-  height: auto;
-  margin: auto 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const JoinHeader = styled.div`
-  width: 100%;
-  height: 162px;
-  background-color: #000000;
-  font-family: "SUITE";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 62px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
 `;
 
 const StyledForm = styled.form`
@@ -87,6 +65,7 @@ const StyledInput = styled.input`
 const StyledCheckBox = styled.input`
   width: 30px;
   height: 30px;
+  cursor: pointer;
 `;
 
 const DuplicatedId = styled.button`
@@ -100,8 +79,12 @@ const DuplicatedId = styled.button`
   font-weight: 400;
   font-size: 24px;
   line-height: 30px;
+  cursor: pointer;
   :hover {
-    color: #939393;
+    background-color: #ffffff;
+    border: 2px solid #442e68;
+    font-weight: 700;
+    color: #442e68;
   }
 `;
 
@@ -118,48 +101,46 @@ const JoinCheckButton = styled.button`
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
+  cursor: pointer;
   :hover {
-    color: #939393;
+    background-color: #ffffff;
+    border: 2px solid #442e68;
+    font-weight: 700;
+    color: #442e68;
   }
 `;
 
-export default function JoinPage(props) {
+export default function JoinPage() {
   return (
-    <Wrap>
-      <Container>
-        <JoinHeader>
-          <span>SIGN UP</span>
-        </JoinHeader>
-        <StyledForm>
-          <StyledUl>
-            <StyledLi>
-              아이디 <StyledInput type="text" name="id"></StyledInput>
-              <DuplicatedId type="button">중복확인</DuplicatedId>
-            </StyledLi>
-            <StyledLi>
-              프로필명{" "}
-              <StyledInput type="text" name="profileName"></StyledInput>
-            </StyledLi>
-            <StyledLi>
-              패스워드{" "}
-              <StyledInput type="password" name="password"></StyledInput>
-            </StyledLi>
-            <StyledLi>
-              패스워드 확인{" "}
-              <StyledInput type="password" name="passwordCheck"></StyledInput>
-            </StyledLi>
-            <StyledLi>
-              <StyledCheckBox type="checkbox" id="joinCheck"></StyledCheckBox>
-              <label htmlFor="joinCheck">
-                가입 시 입력했던 정보는 탈퇴 시 소멸됩니다.
-              </label>
-            </StyledLi>
-            <StyledLi>
-              <JoinCheckButton type="submit">가입하기</JoinCheckButton>
-            </StyledLi>
-          </StyledUl>
-        </StyledForm>
-      </Container>
-    </Wrap>
+    <Container>
+      <PageTitle title="SIGN UP" marginBottom={3} />
+      <StyledForm>
+        <StyledUl>
+          <StyledLi>
+            아이디 <StyledInput type="text" name="id"></StyledInput>
+            <DuplicatedId type="button">중복확인</DuplicatedId>
+          </StyledLi>
+          <StyledLi>
+            프로필명 <StyledInput type="text" name="profileName"></StyledInput>
+          </StyledLi>
+          <StyledLi>
+            패스워드 <StyledInput type="password" name="password"></StyledInput>
+          </StyledLi>
+          <StyledLi>
+            패스워드 확인{" "}
+            <StyledInput type="password" name="passwordCheck"></StyledInput>
+          </StyledLi>
+          <StyledLi>
+            <StyledCheckBox type="checkbox" id="joinCheck"></StyledCheckBox>
+            <label htmlFor="joinCheck">
+              가입 시 입력했던 정보는 탈퇴 시 소멸됩니다.
+            </label>
+          </StyledLi>
+          <StyledLi>
+            <JoinCheckButton type="submit">가입하기</JoinCheckButton>
+          </StyledLi>
+        </StyledUl>
+      </StyledForm>
+    </Container>
   );
 }

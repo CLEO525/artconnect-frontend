@@ -1,36 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Route, Link } from "react-router-dom";
+import PageTitle from "../components/common/layout/PageTitle";
 
-const Wrap = styled.div`
-  width: auto;
-  height: auto;
-  margin: auto 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const LoginHeader = styled.div`
-  width: 100%;
-  height: 162px;
-  margin-bottom: 3rem;
-  background-color: #000000;
-  font-family: "SUITE";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 62px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
 `;
 
 const StyledInput = styled.input`
@@ -76,8 +53,12 @@ const LoginButton = styled.button`
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
+  cursor: pointer;
   :hover {
-    color: #939393;
+    background-color: #ffffff;
+    border: 2px solid #442e68;
+    font-weight: 700;
+    color: #442e68;
   }
 `;
 
@@ -85,6 +66,7 @@ const SignUpButton = styled.button`
   width: 122px;
   height: 56px;
   margin-left: 26px;
+  margin-bottom: 3rem;
   background: #ffffff;
   border: 1px solid #ff4429;
   font-family: "SUITE";
@@ -93,35 +75,34 @@ const SignUpButton = styled.button`
   font-weight: 400;
   font-size: 24px;
   line-height: 27px;
+  cursor: pointer;
   :hover {
-    color: #939393;
+    border: 2px solid #442e68;
+    font-weight: 700;
+    color: #442e68;
   }
 `;
 
 export default function LoginPage() {
   return (
-    <Wrap>
-      <Container>
-        <LoginHeader>
-          <span>LOGIN</span>
-        </LoginHeader>
-        <div>
-          <StyledInput type="text" placeholder="아이디"></StyledInput>
-          <br />
-          <StyledInput type="password" placeholder="비밀번호"></StyledInput>
-          <br />
-        </div>
-        <div>
-          <LoginButton>로그인</LoginButton>
-        </div>
-        <div>
-          <StyledSpan>
-            회원이 아니시라면 <ColoredSpan>회원가입</ColoredSpan>을 해주시기
-            바랍니다.
-            <SignUpButton>회원가입</SignUpButton>
-          </StyledSpan>
-        </div>
-      </Container>
-    </Wrap>
+    <Container>
+      <PageTitle title="LOGIN" marginBottom={3} />
+      <div>
+        <StyledInput type="text" placeholder="아이디"></StyledInput>
+        <br />
+        <StyledInput type="password" placeholder="비밀번호"></StyledInput>
+        <br />
+      </div>
+      <div>
+        <LoginButton>로그인</LoginButton>
+      </div>
+      <div>
+        <StyledSpan>
+          회원이 아니시라면 <ColoredSpan>회원가입</ColoredSpan>을 해주시기
+          바랍니다.
+          <SignUpButton>회원가입</SignUpButton>
+        </StyledSpan>
+      </div>
+    </Container>
   );
 }
