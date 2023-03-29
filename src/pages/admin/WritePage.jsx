@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import PageTitle from "../../components/common/layout/PageTitle";
+import Input from "../../components/common/style/Input";
+import Button from "../../components/common/style/Button";
 import selectImg from "../../assets/selectImg.jpeg";
 // CK에디터로 전시 내용 텍스트에리어 설정
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -26,12 +29,18 @@ const StyledUl = styled.ul`
   flex-direction: column;
   gap: 3rem;
   margin-top: 1rem;
+
+  li:last-child {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2rem -200px 3rem 0;
+  }
 `;
 
 const StyledLi = styled.li`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 `;
 
 const StyledSelect = styled.select`
@@ -68,41 +77,6 @@ const StyledOption = styled.option`
   cursor: pointer;
 `;
 
-const StyledInput = styled.input`
-  width: 420px;
-  height: 54px;
-  font-family: "SUITE";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 40px;
-  text-align: center;
-  margin-left: 2rem;
-  padding-right: 3rem;
-  background: #ffffff;
-  border: 2px solid #000000;
-`;
-
-const StyledButton = styled.button`
-  width: 200px;
-  height: 70px;
-  margin: 0 30px 30px 40px;
-  border: 2px solid #442e68;
-  font-weight: 700;
-  color: #442e68;
-  background-color: #ffffff;
-  font-family: "SUITE";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  cursor: pointer;
-  :hover {
-    background-color: #1c1c1c;
-    color: #ffffff;
-    border: 2px solid #000000;
-  }
-`;
-
 export default function WritePage() {
   return (
     <Container>
@@ -117,20 +91,40 @@ export default function WritePage() {
               <StyledOption value="free">무료</StyledOption>
             </StyledSelect>
             <label htmlFor="exhibitionName">전시명</label>
-            <StyledInput type="text" id="exhibitionName" />
+            <Input
+              type="text"
+              width="400px"
+              id="exhibitionName"
+              margin="0 0 0 2rem"
+              padding="0 3rem 0 0"
+            />
           </StyledLi>
           <StyledLi>
             <label htmlFor="exhibitionSdate">전시기간</label>
-            <StyledInput type="date" id="exhibitionSdate" />
+            <Input
+              type="date"
+              id="exhibitionSdate"
+              width="270px"
+              margin="0 0 0 2rem"
+              padding="0 3rem 0 0"
+              align="center"
+            />
             <label htmlFor="exhibitionEdate" />
-            <StyledInput type="date" id="exhibitionEdate" />
+            <Input
+              type="date"
+              id="exhibitionEdate"
+              width="270px"
+              margin="0 0 0 2rem"
+              padding="0 3rem 0 0"
+              align="center"
+            />
           </StyledLi>
           <StyledLi>
             <label htmlFor="thumbNail">썸네일</label>
-            <StyledInput type="file" id="thumbNail" />
+            <input type="file" id="thumbNail" className="upload" />
           </StyledLi>
           <StyledLi>
-            <label htmlFor="contents">전시내용</label>
+            <label htmlFor="contents">관람안내</label>
             <CKEditor
               id="contents"
               editor={ClassicEditor}
@@ -153,14 +147,33 @@ export default function WritePage() {
           </StyledLi>
           <StyledLi>
             <label htmlFor="upload">전시파일</label>
-            <StyledInput type="file" id="upload" />
+            <input type="file" id="upload" className="upload" />
+          </StyledLi>
+
+          <StyledLi>
+            <Button
+              bName="CONFIRM"
+              width="200"
+              height="73"
+              background="#ffffff"
+              border="2px solid #442e68"
+              color="#442e68"
+              bgColor="#1c1c1c"
+              hoverColor="#ffffff"
+            />
+            <Button
+              bName="CANCEL"
+              width="200"
+              height="73"
+              background="#ffffff"
+              border="2px solid #442e68"
+              color="#442e68"
+              bgColor="#1c1c1c"
+              hoverColor="#ffffff"
+            />
           </StyledLi>
         </StyledUl>
       </StyledForm>
-      <div>
-        <StyledButton>CONFIRM</StyledButton>
-        <StyledButton>CANCEL</StyledButton>
-      </div>
     </Container>
   );
 }

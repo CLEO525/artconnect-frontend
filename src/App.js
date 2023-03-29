@@ -8,7 +8,6 @@ import BookmarkPage from "./pages/mypage/BookmarkPage";
 
 import "./App.css";
 
-
 const Wrap = styled.div`
   width: auto;
   height: auto;
@@ -24,11 +23,10 @@ function App() {
       <JoinPage />
       <LoginPage />
       <EditPage />
-
+      <BookmarkPage />
 
       {/* admin페이지 */}
       <WritePage />
-      <BookmarkPage />
     </Wrap>
   );
 }

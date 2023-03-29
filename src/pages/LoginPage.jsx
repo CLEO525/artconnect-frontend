@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Route, Link } from "react-router-dom";
+import Button from "../components/common/style/Button";
+import Input from "../components/common/style/Input";
+import Span from "../components/common/style/Span";
 import PageTitle from "../components/common/layout/PageTitle";
 
 const Container = styled.div`
@@ -8,79 +10,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const StyledInput = styled.input`
-  width: 450px;
-  height: 54px;
-  margin: 1rem 0rem 1rem;
-  padding-left: 10px;
-  font-family: "SUITE";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 27px;
-  background: #ffffff;
-  border: 2px solid #000000;
-`;
-
-const StyledSpan = styled.span`
-  font-family: "SUITE";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 27px;
-  align-items: center;
-`;
-const ColoredSpan = styled.span`
-  font-family: "SUITE";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 27px;
-  color: #ff4429;
-  align-items: center;
-`;
-
-const LoginButton = styled.button`
-  width: 363px;
-  height: 81px;
-  margin: 20px 0 20px;
-  background: #1c1c1c;
-  border: 2px solid #000000;
-  font-family: "SUITE";
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  cursor: pointer;
-  :hover {
-    background-color: #ffffff;
-    border: 2px solid #442e68;
-    font-weight: 700;
-    color: #442e68;
-  }
-`;
-
-const SignUpButton = styled.button`
-  width: 122px;
-  height: 56px;
-  margin-left: 26px;
   margin-bottom: 3rem;
-  background: #ffffff;
-  border: 1px solid #ff4429;
-  font-family: "SUITE";
-  color: #ff4429;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 27px;
-  cursor: pointer;
-  :hover {
-    border: 2px solid #442e68;
-    font-weight: 700;
-    color: #442e68;
-  }
 `;
 
 export default function LoginPage() {
@@ -88,20 +18,31 @@ export default function LoginPage() {
     <Container>
       <PageTitle title="LOGIN" marginBottom={3} />
       <div>
-        <StyledInput type="text" placeholder="아이디"></StyledInput>
+        <Input type="text" placeholder="아이디" margin="1rem 0rem 1rem"></Input>
         <br />
-        <StyledInput type="password" placeholder="비밀번호"></StyledInput>
+        <Input
+          type="password"
+          placeholder="비밀번호"
+          margin="1rem 0rem 1rem"
+        ></Input>
         <br />
       </div>
       <div>
-        <LoginButton>로그인</LoginButton>
+        <Button bName="로그인" />
       </div>
       <div>
-        <StyledSpan>
-          회원이 아니시라면 <ColoredSpan>회원가입</ColoredSpan>을 해주시기
-          바랍니다.
-          <SignUpButton>회원가입</SignUpButton>
-        </StyledSpan>
+        <Span text="회원이 아니시라면" />
+        <Span color="#ff4429" text=" 회원가입 " />
+        <Span text="을 해주시기 바랍니다." />
+        <Button
+          bName="회원가입"
+          width="122"
+          height="56"
+          background="#ffffff"
+          color="#ff4429"
+          hoverColor="#442e68"
+          border="1px solid #ff4429"
+        />
       </div>
     </Container>
   );

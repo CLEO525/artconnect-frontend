@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "../components/common/style/Button";
+import Input from "../components/common/style/Input";
 import PageTitle from "../components/common/layout/PageTitle";
 
 const Container = styled.div`
@@ -11,7 +13,7 @@ const Container = styled.div`
 
 const StyledForm = styled.form`
   font-size: 26px;
-  width: auto;
+  width: 690px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -21,18 +23,8 @@ const StyledUl = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
   margin-top: 1rem;
-
-  li:first-child {
-    justify-content: flex-start;
-    gap: 1.2rem;
-  }
-
-  li:first-child input {
-    width: 45%;
-    margin-left: 70px;
-  }
 
   li:nth-child(5) {
     display: flex;
@@ -54,60 +46,10 @@ const StyledLi = styled.li`
   align-items: center;
 `;
 
-const StyledInput = styled.input`
-  width: 460px;
-  height: 54px;
-  margin-left: 1rem;
-  background: #ffffff;
-  border: 2px solid #000000;
-`;
-
 const StyledCheckBox = styled.input`
   width: 30px;
   height: 30px;
   cursor: pointer;
-`;
-
-const DuplicatedId = styled.button`
-  width: 157px;
-  height: 54px;
-  background: #1c1c1c;
-  border: 2px solid #000000;
-  font-family: "SUITE";
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 30px;
-  cursor: pointer;
-  :hover {
-    background-color: #ffffff;
-    border: 2px solid #442e68;
-    font-weight: 700;
-    color: #442e68;
-  }
-`;
-
-const JoinCheckButton = styled.button`
-  width: 338px;
-  height: 81px;
-  margin-top: 20px;
-  justify-content: center;
-  align-items: center;
-  background: #1c1c1c;
-  border: 2px solid #000000;
-  font-family: "SUITE";
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  cursor: pointer;
-  :hover {
-    background-color: #ffffff;
-    border: 2px solid #442e68;
-    font-weight: 700;
-    color: #442e68;
-  }
 `;
 
 export default function JoinPage() {
@@ -117,18 +59,30 @@ export default function JoinPage() {
       <StyledForm>
         <StyledUl>
           <StyledLi>
-            아이디 <StyledInput type="text" name="id"></StyledInput>
-            <DuplicatedId type="button">중복확인</DuplicatedId>
+            아이디
+            <Input
+              type="text"
+              name="id"
+              margin="0 0 0 100px"
+              width="41%"
+            ></Input>
+            <Button
+              type="button"
+              width={157}
+              height={59}
+              bName="중복확인"
+              margin="0 16px"
+            />
           </StyledLi>
           <StyledLi>
-            프로필명 <StyledInput type="text" name="profileName"></StyledInput>
+            프로필명
+            <Input type="text" name="profileName"></Input>
           </StyledLi>
           <StyledLi>
-            패스워드 <StyledInput type="password" name="password"></StyledInput>
+            패스워드 <Input type="password" name="password"></Input>
           </StyledLi>
           <StyledLi>
-            패스워드 확인{" "}
-            <StyledInput type="password" name="passwordCheck"></StyledInput>
+            패스워드 확인 <Input type="password" name="passwordCheck"></Input>
           </StyledLi>
           <StyledLi>
             <StyledCheckBox type="checkbox" id="joinCheck"></StyledCheckBox>
@@ -137,7 +91,7 @@ export default function JoinPage() {
             </label>
           </StyledLi>
           <StyledLi>
-            <JoinCheckButton type="submit">가입하기</JoinCheckButton>
+            <Button type="submit" bName="가입하기" />
           </StyledLi>
         </StyledUl>
       </StyledForm>
