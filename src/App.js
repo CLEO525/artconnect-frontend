@@ -4,6 +4,7 @@ import JoinPage from "./pages/JoinPage";
 import LoginPage from "./pages/LoginPage";
 import EditPage from "./pages/mypage/EditPage";
 import "./App.css";
+import BookmarkPage from "./pages/mypage/BookmarkPage";
 
 const Wrap = styled.div`
   width: auto;
@@ -20,6 +21,7 @@ function App() {
       <JoinPage />
       <LoginPage />
       <EditPage />
+      <BookmarkPage />
     </Wrap>
   );
 }
