@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+  width: 930px;
+  min-height: 400px;
+  margin-bottom: 20px;
+}

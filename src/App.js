@@ -3,8 +3,11 @@ import styled from "styled-components";
 import JoinPage from "./pages/JoinPage";
 import LoginPage from "./pages/LoginPage";
 import EditPage from "./pages/mypage/EditPage";
-import "./App.css";
+import WritePage from "./pages/admin/WritePage";
 import BookmarkPage from "./pages/mypage/BookmarkPage";
+
+import "./App.css";
+
 
 const Wrap = styled.div`
   width: auto;
@@ -21,6 +24,10 @@ function App() {
       <JoinPage />
       <LoginPage />
       <EditPage />
+
+
+      {/* admin페이지 */}
+      <WritePage />
       <BookmarkPage />
     </Wrap>
   );
