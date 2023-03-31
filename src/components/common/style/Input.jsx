@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 import styled from "styled-components";
 
@@ -19,7 +18,7 @@ const StyledInput = styled.input`
   display: ${(props) => props.display};
 `;
 
-export default function Input(props) {
+export function Input(props) {
   const {
     width,
     height,
@@ -47,3 +46,4 @@ export default function Input(props) {
     ></StyledInput>
   );
 }
+export default StyledInput;

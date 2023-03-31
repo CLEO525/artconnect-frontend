@@ -22,7 +22,7 @@ const StyledButton = styled.button`
   }
 `;
 
-export default function UnderLineButton(props) {
+export function UnderLineButton(props) {
   const {
     width,
     margin,
@@ -50,3 +50,5 @@ export default function UnderLineButton(props) {
     </StyledButton>
   );
 }
+
+export default StyledButton;

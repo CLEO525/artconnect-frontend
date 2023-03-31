@@ -10,7 +10,7 @@ const StyledSpan = styled.span`
   align-items: ${(props) => props.align || "center"};
   color: ${(props) => props.color || "#000000"};
 `;
-export default function Span(props) {
+export function Span(props) {
   const { color, size, align } = props;
   return (
     <StyledSpan color={color} size={size} align={align}>
@@ -18,3 +18,5 @@ export default function Span(props) {
     </StyledSpan>
   );
 }
+
+export default StyledSpan;

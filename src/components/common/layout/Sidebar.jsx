@@ -30,11 +30,11 @@ export default function Sidebar() {
   return (
     <SideWrap>
       <StyledSideCenter>
-        <UnderLineButton bName="북마크" />
-        <UnderLineButton bName="내 정보 수정" />
+        <UnderLineButton>북마크</UnderLineButton>
+        <UnderLineButton>내 정보 수정</UnderLineButton>
       </StyledSideCenter>
       <StyledSideRight>
-        <UnderLineButton bName="탈퇴하기" />
+        <UnderLineButton>탈퇴하기</UnderLineButton>
       </StyledSideRight>
     </SideWrap>
   );

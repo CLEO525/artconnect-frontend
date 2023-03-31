@@ -23,7 +23,7 @@ const StyledButton = styled.button`
   }
 `;
 
-export default function Button(props) {
+export function Button(props) {
   const {
     width,
     height,
@@ -49,3 +49,5 @@ export default function Button(props) {
     </StyledButton>
   );
 }
+
+export default StyledButton;

@@ -1,95 +1,26 @@
 import React from "react";
-import styled from "styled-components";
-import PageTitle from "../../components/common/layout/PageTitle";
-import Input from "../../components/common/style/Input";
-import Button from "../../components/common/style/Button";
-import selectImg from "../../assets/selectImg.jpeg";
+import PageTitle from "../../../components/common/layout/PageTitle";
+import Input from "../../../components/common/style/Input";
+import Button from "../../../components/common/style/Button";
+
 // CK에디터로 전시 내용 텍스트에리어 설정
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
-const Container = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const StyledForm = styled.form`
-  font-size: 26px;
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledUl = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  margin-top: 1rem;
-
-  li:last-child {
-    display: flex;
-    justify-content: flex-end;
-    margin: 2rem -200px 3rem 0;
-  }
-`;
-
-const StyledLi = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const StyledSelect = styled.select`
-  width: 100px;
-  height: 58px;
-  border: 2px solid #000000;
-  padding-left: 1.5rem;
-  margin-right: 2rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url(${selectImg});
-  background-size: 50px;
-  background-repeat: no-repeat;
-  font-family: "SUITE";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 40px;
-  text-align: center;
-  cursor: pointer;
-
-  ::-ms-expand {
-    display: none;
-  }
-`;
-
-const StyledOption = styled.option`
-  font-family: "SUITE";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 40px;
-  cursor: pointer;
-`;
+import * as styles from "./styles";
 
 export default function WritePage() {
   return (
-    <Container>
+    <styles.Container>
       <PageTitle title="전시 등록" marginBottom={3} />
-      <StyledForm>
-        <StyledUl>
-          <StyledLi>
+      <styles.Form>
+        <styles.Ul>
+          <styles.Li>
             <label htmlFor="category">카테고리</label>
-            <StyledSelect name="category" id="category">
-              <StyledOption value="planned">예정</StyledOption>
-              <StyledOption value="progress">진행</StyledOption>
-              <StyledOption value="free">무료</StyledOption>
-            </StyledSelect>
+            <styles.Select name="category" id="category">
+              <styles.Option value="planned">예정</styles.Option>
+              <styles.Option value="progress">진행</styles.Option>
+              <styles.Option value="free">무료</styles.Option>
+            </styles.Select>
             <label htmlFor="exhibitionName">전시명</label>
             <Input
               type="text"
@@ -98,8 +29,8 @@ export default function WritePage() {
               margin="0 0 0 2rem"
               padding="0 3rem 0 0"
             />
-          </StyledLi>
-          <StyledLi>
+          </styles.Li>
+          <styles.Li>
             <label htmlFor="exhibitionSdate">전시기간</label>
             <Input
               type="date"
@@ -118,12 +49,12 @@ export default function WritePage() {
               padding="0 3rem 0 0"
               align="center"
             />
-          </StyledLi>
-          <StyledLi>
+          </styles.Li>
+          <styles.Li>
             <label htmlFor="thumbNail">썸네일</label>
             <input type="file" id="thumbNail" className="upload" />
-          </StyledLi>
-          <StyledLi>
+          </styles.Li>
+          <styles.Li>
             <label htmlFor="contents">관람안내</label>
             <CKEditor
               id="contents"
@@ -144,15 +75,14 @@ export default function WritePage() {
                 console.log("Focus.", editor);
               }}
             />
-          </StyledLi>
-          <StyledLi>
+          </styles.Li>
+          <styles.Li>
             <label htmlFor="upload">전시파일</label>
             <input type="file" id="upload" className="upload" />
-          </StyledLi>
+          </styles.Li>
 
-          <StyledLi>
+          <styles.Li>
             <Button
-              bName="CONFIRM"
               width="200"
               height="73"
               background="#ffffff"
@@ -160,9 +90,10 @@ export default function WritePage() {
               color="#442e68"
               bgColor="#1c1c1c"
               hoverColor="#ffffff"
-            />
+            >
+              CONFIRM
+            </Button>
             <Button
-              bName="CANCEL"
               width="200"
               height="73"
               background="#ffffff"
@@ -170,10 +101,12 @@ export default function WritePage() {
               color="#442e68"
               bgColor="#1c1c1c"
               hoverColor="#ffffff"
-            />
-          </StyledLi>
-        </StyledUl>
-      </StyledForm>
-    </Container>
+            >
+              CANCEL
+            </Button>
+          </styles.Li>
+        </styles.Ul>
+      </styles.Form>
+    </styles.Container>
   );
 }
