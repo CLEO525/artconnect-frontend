@@ -3,6 +3,9 @@ import styled from "styled-components";
 import JoinPage from "./pages/JoinPage";
 import LoginPage from "./pages/LoginPage";
 import EditPage from "./pages/mypage/EditPage";
+import WritePage from "./pages/admin/WritePage";
+import BookmarkPage from "./pages/mypage/BookmarkPage";
+
 import "./App.css";
 
 const Wrap = styled.div`
@@ -20,6 +23,10 @@ function App() {
       <JoinPage />
       <LoginPage />
       <EditPage />
+      <BookmarkPage />
+
+      {/* admin페이지 */}
+      <WritePage />
     </Wrap>
   );
 }
