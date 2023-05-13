@@ -24,30 +24,7 @@ const StyledButton = styled.button`
 `;
 
 export function Button(props) {
-  const {
-    width,
-    height,
-    background,
-    color,
-    bgColor,
-    hoverColor,
-    margin,
-    border,
-  } = props;
-  return (
-    <StyledButton
-      width={width}
-      height={height}
-      background={background}
-      color={color}
-      bgColor={bgColor}
-      hoverColor={hoverColor}
-      margin={margin}
-      border={border}
-    >
-      {props.bName}
-    </StyledButton>
-  );
+  return <StyledButton></StyledButton>;
 }
 
 export default StyledButton;

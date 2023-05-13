@@ -19,31 +19,6 @@ const StyledInput = styled.input`
 `;
 
 export function Input(props) {
-  const {
-    width,
-    height,
-    background,
-    margin,
-    padding,
-    borderColor,
-    placeholder,
-    type,
-    align,
-    display,
-  } = props;
-  return (
-    <StyledInput
-      type={type || "text"}
-      width={width}
-      height={height}
-      margin={margin}
-      padding={padding}
-      align={align}
-      background={background}
-      borderColor={borderColor}
-      placeholder={placeholder}
-      display={display}
-    ></StyledInput>
-  );
+  return <StyledInput></StyledInput>;
 }
 export default StyledInput;

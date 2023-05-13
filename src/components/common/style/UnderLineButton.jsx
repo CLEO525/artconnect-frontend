@@ -23,32 +23,7 @@ const StyledButton = styled.button`
 `;
 
 export function UnderLineButton(props) {
-  const {
-    width,
-    margin,
-    size,
-    bgColor,
-    borderB,
-    hoverB,
-    hColor,
-    hWeight,
-    hCursor,
-  } = props;
-  return (
-    <StyledButton
-      width={width}
-      margin={margin}
-      size={size}
-      bgColor={bgColor}
-      borderB={borderB}
-      hWeight={hWeight}
-      hoverB={hoverB}
-      hColor={hColor}
-      hCursor={hCursor}
-    >
-      {props.bName}
-    </StyledButton>
-  );
+  return <StyledButton></StyledButton>;
 }
 
 export default StyledButton;
