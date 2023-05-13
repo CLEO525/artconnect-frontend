@@ -7,16 +7,15 @@ const StyledSpan = styled.span`
   font-weight: 400;
   font-size: ${(props) => props.size || "24px"};
   line-height: 27px;
+  margin: ${(props) => props.margin || "0px"};
   align-items: ${(props) => props.align || "center"};
   color: ${(props) => props.color || "#000000"};
+  :hover {
+    color: ${(props) => props.hover || "#000000"};
+  }
 `;
 export function Span(props) {
-  const { color, size, align } = props;
-  return (
-    <StyledSpan color={color} size={size} align={align}>
-      {props.text}
-    </StyledSpan>
-  );
+  return <StyledSpan></StyledSpan>;
 }
 
 export default StyledSpan;
