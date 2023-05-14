@@ -45,7 +45,7 @@ export const authSlice = createSlice({
       .addCase(loginAsync.rejected, (state, action) => {
         state.isLoggedIn = false;
         state.user = null;
-        state.error = action.payload.data.error;
+        state.error = action.payload.error;
       });
   },
 });

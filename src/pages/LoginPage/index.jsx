@@ -23,15 +23,13 @@ function LoginPage() {
     setIsLoading(true);
 
     try {
-      const resultAction = await dispatch(loginAsync({ id, pwd }));
-      if (loginAsync.fulfilled.match(resultAction)) {
-        localStorage.setItem("token", resultAction.payload.accessToken);
-        navigate("/");
-      } else if (loginAsync.rejected.match(resultAction)) {
-        setError(resultAction.payload.data.error);
+      const resultAction = await dispatch(loginAsync({ id, pwd })).unwrap();
+      if (resultAction.loginSuccess) {
+        localStorage.setItem("token", resultAction.accessToken);
+        return navigate("/");
       }
-    } catch (error) {
-      console.log(error);
+    } catch (rejectedValueOrSerializedError) {
+      setError(rejectedValueOrSerializedError.error);
     } finally {
       setIsLoading(false);
     }
