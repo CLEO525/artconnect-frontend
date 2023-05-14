@@ -76,7 +76,7 @@ function LoginPage() {
         </Button>
       </form>
       {error && (
-        <Span color="#ff4429" margin="15px" size="20px">
+        <Span color="#ff4429" margin="15px" size="20px" hover="#ff4429">
           {error}
         </Span>
       )}
